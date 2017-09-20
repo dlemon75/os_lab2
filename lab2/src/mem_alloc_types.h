@@ -5,7 +5,7 @@
 
 /* Structure declaration for a free block */
 typedef struct memory_block_free{
-    int block_size;
+    uint16_t block_size;
     struct memory_block_free *next;
     struct memory_block_free *prev;
     /* ...*/

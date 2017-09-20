@@ -58,10 +58,19 @@ char *memory_alloc(int size){
     
     /* Warning: do not forget to call print_alloc_info() or
        print_alloc_error() */
-    //int size_total = size + sizeof(mem_bfree_t);
-    //while(first_free){
+    if(first_free != NULL){
+      mem_bfree_t first_available = first_free;
+      while(first_available.block_size < size && first_available != NULL){ // Skip to find free space
+        first_available = first_available.next;
+      } if first_available == NULL{
+        fprintf(stderr, "NO AVAILABLE FREE MEMORY\n");
+        exit(1);
+      } 
+      mem_balloc_t alloc_header;
 
-    //}
+      mem_bfree_t next_free_header;
+      next_free_header 
+    }
 
     
     /* .... */
